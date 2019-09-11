@@ -46,7 +46,7 @@
             </label>
 
             <label>Category:
-                <input type="text" name="categoryId" <%=category.getName()%>
+                <input type="text" name="categoryId" value="<%=product.getCategory()%>"
                     <%
                             for (Category category : (List<Category>)request.getAttribute("categories")) {
                                 if (category.getId() == product.getCategory().getId()) {
