@@ -2,7 +2,6 @@ package app.servlets;
 
 import app.dao.ProductDao;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

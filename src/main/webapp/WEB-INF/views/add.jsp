@@ -39,33 +39,33 @@
     </label-->
 
     <label>Name:
-    <input type="text" name="nameJ"><br />
+    <input type="text" name="nameJ" required="this field must be filled out"><br />
     </label>
 
 
     <label>CategoryID:
-        <input type="text" name="categoryId"><br />
+        <input type="text" name="categoryId" placeholder="must be a number"><br />
     </label>
 
 
         <label>Date of produce:
-        <input type="date" name="dateOfProduceJ"><br />
+        <input type="date" name="dateOfProduceJ" placeholder="DD.MM.YYYY" required><br />
     </label>
 
     <label>Date of expired:
-        <input type="date" name="dateOfExpiredJ"><br />
+        <input type="date" name="dateOfExpiredJ" required placeholder="DD.MM.YYYY"><br />
     </label>
 
     <label>Amount:
-        <input type="number" name="amountJ"><br />
+        <input type="number" name="amountJ" required><br />
     </label>
 
     <label>Price:
-        <input type="number" name="priceJ" step="any"><br />
+        <input type="number" name="priceJ" step="any" required placeholder="0.00"><br />
     </label>
 
     <label>Provider:
-        <input type="text" name="providerJ"><br />
+        <input type="text" name="providerJ" required><br />
     </label>
 
     <label>Phone number provider:
@@ -73,11 +73,11 @@
     </label>
 
     <label>Date of delivery:
-        <input type="date" name="dateOfDeliveryJ"><br />
+        <input type="date" name="dateOfDeliveryJ" required placeholder="DD.MM.YYYY"><br />
     </label>
 
     <label>Number of warehouse:
-        <input type="text" name="noWarehouseJ"><br />
+        <input type="text" name="noWarehouseJ" required><br />
     </label>
 
     <label>Description:

@@ -13,7 +13,7 @@
 <body>
 <!-- header -->
 <div>
-    <h1>Generate report<//h1>
+    <h1>Generate report</h1>
 </div>
 
 <input type="button" onclick='location.href="../.."' value="Main page"/>
