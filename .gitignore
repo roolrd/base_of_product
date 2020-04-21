@@ -12,6 +12,9 @@ target/
 INSERTINTObase.docx
 *.pdf
 
+Build_WAR/
+backupDB/
+
 # Generated files
 
 # Sensitive or high-churn files
