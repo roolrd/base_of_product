@@ -8,11 +8,10 @@
 
 # User-specific stuff
 .idea/
-target/
-out/
+target/*
+out/*
 Procfile
 azure-pipelines.yml
-
 INSERTINTObase.docx
 *.pdf
 
