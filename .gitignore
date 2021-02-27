@@ -9,6 +9,10 @@
 # User-specific stuff
 .idea/
 target/
+out/
+Procfile
+azure-pipelines.yml
+
 INSERTINTObase.docx
 *.pdf
 
