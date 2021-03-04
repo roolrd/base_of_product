@@ -46,6 +46,7 @@
             </label>
 
             <label>Category:
+                <!--<input type="text" name="categoryId" value="<%=product.getCategory()%>"-->
                 <input type="text" name="categoryId" value="<%=product.getCategory()%>"
                     <%
                             for (Category category : (List<Category>)request.getAttribute("categories")) {
