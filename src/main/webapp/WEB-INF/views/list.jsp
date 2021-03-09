@@ -55,10 +55,10 @@
         <td><%=product.getDescription()%></td>
         <td><%=product.getNotes()%></td>
         <td>
-            <a class="w3-btn w3-hover-gray w3-round-large" href="/product/edit?id=<%=product.getId()%>"> Edit</a>
+            <a class="w3-btn w3-hover-gray w3-round-large" href="/base-of-product/edit?id=<%=product.getId()%>"> Edit</a>
         </td>
         <td>
-            <a class="w3-btn w3-hover-red w3-round-large" href="/product/delete?id=<%=product.getId()%>"> Delete</a>
+            <a class="w3-btn w3-hover-red w3-round-large" href="/base-of-product/delete?id=<%=product.getId()%>"> Delete</a>
         </td>
     </tr>
     <%
