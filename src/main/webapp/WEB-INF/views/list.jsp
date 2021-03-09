@@ -68,7 +68,7 @@
 <br/>
 </div>
     <div class="w3-container w3-grey w3-opacity w3-right-align w3-padding">
-<input type="button" class="w3-btn w3-round-large" onclick='location.href="../.."' value="Main page"/>
+<input type="button" class="w3-btn w3-round-large" onclick='location.href="/base-of-product"' value="Main page"/>
 </div>
 </body>
 </html>
