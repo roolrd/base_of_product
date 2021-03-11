@@ -13,7 +13,7 @@ public class DBconnect {
 
         if (connection == null) {try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/base_products?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root", "1111");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/base_products?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root", "rO,75olRD");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
