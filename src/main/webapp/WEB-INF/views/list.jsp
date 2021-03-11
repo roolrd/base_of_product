@@ -12,7 +12,7 @@
 <html>
 <head>
     <title>List products</title>
-    <link rel="stylesheet" href="/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body class="w3-light-grey">
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
@@ -55,10 +55,10 @@
         <td><%=product.getDescription()%></td>
         <td><%=product.getNotes()%></td>
         <td>
-            <a class="w3-btn w3-hover-gray w3-round-large" href="/product/edit?id=<%=product.getId()%>"> Edit</a>
+            <a class="w3-btn w3-hover-gray w3-round-large" href="/base-of-product/edit?id=<%=product.getId()%>"> Edit</a>
         </td>
         <td>
-            <a class="w3-btn w3-hover-red w3-round-large" href="/product/delete?id=<%=product.getId()%>"> Delete</a>
+            <a class="w3-btn w3-hover-red w3-round-large" href="/base-of-product/delete?id=<%=product.getId()%>"> Delete</a>
         </td>
     </tr>
     <%
@@ -68,7 +68,7 @@
 <br/>
 </div>
     <div class="w3-container w3-grey w3-opacity w3-right-align w3-padding">
-<input type="button" class="w3-btn w3-round-large" onclick='location.href="../.."' value="Main page"/>
+<input type="button" class="w3-btn w3-round-large" onclick='location.href="/base-of-product"' value="Main page"/>
 </div>
 </body>
 </html>
