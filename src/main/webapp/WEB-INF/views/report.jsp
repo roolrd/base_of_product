@@ -16,6 +16,6 @@
     <h1>Generate report</h1>
 </div>
 
-<input type="button" onclick='location.href="../.."' value="Main page"/>
+<input type="button" onclick='location.href="../base-of-product"' value="Main page"/>
 </body>
 </html>

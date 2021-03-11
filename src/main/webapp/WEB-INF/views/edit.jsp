@@ -46,6 +46,7 @@
             </label>
 
             <label>Category:
+                <!--<input type="text" name="categoryId" value="<%=product.getCategory()%>"-->
                 <input type="text" name="categoryId" value="<%=product.getCategory()%>"
                     <%
                             for (Category category : (List<Category>)request.getAttribute("categories")) {
@@ -119,9 +120,9 @@
 </div>
 
 <div>
-    <button onclick="location.href='/list'">Back to list</button>
+    <button onclick="location.href='/base-of-product/list'">Back to list</button>
 
-    <button onclick="location.href='../..'">Back to main</button>
+    <button onclick="location.href='/base-of-product'">Back to main</button>
 </div>
 
 </body>
