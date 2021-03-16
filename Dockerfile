@@ -1,3 +1,5 @@
 FROM tomcat:9-jre8-alpine
 MAINTAINER ruslanriznyk@gmail.com
-COPY ./base-of-product.war /usr/local/tomcat/webapps
+RUN ["rm", "-fr", "/usr/local/tomcat/webapps/ROOT"]
+COPY ./base-of-product.war /usr/local/tomcat/webapps/ROOT.war
+COPY ./base-of-product.war /usr/local/tomcat/webapps/
