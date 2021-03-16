@@ -22,8 +22,6 @@ public class ListServlet extends HttpServlet {
 
         List<Product> products = ProductDao.readAll();
        req.setAttribute("list of products", products);
-
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/list.jsp");
-        requestDispatcher.forward(req, resp);
+       
     }
 }
