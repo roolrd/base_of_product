@@ -120,7 +120,7 @@
 </div>
 
 <div>
-    <button onclick="location.href='/list'">Back to list</button>
+    <button onclick="location.href='list'">Back to list</button>
 
     <button onclick="location.href='/'">Back to main</button>
 </div>
