@@ -2,6 +2,7 @@ package app.servlets;
 
 import app.dao.ProductDao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +22,7 @@ public class DeleteServlet extends HttpServlet {
         int productID = Integer.parseInt(req.getParameter("id"));
         ProductDao.delete(productID);
         resp.sendRedirect("http://localhost:8080/list");
+
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/list.jsp");
         requestDispatcher.forward(req, resp);
 
