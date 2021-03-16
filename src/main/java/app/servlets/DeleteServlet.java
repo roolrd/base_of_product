@@ -23,8 +23,9 @@ public class DeleteServlet extends HttpServlet {
         ProductDao.delete(productID);
        // resp.sendRedirect("/list");
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/list.jsp");
-        requestDispatcher.forward(req, resp);
+        //RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/list.jsp");
+        //requestDispatcher.forward(req, resp);
+
 
             }
 }
