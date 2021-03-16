@@ -21,6 +21,8 @@ public class DeleteServlet extends HttpServlet {
         int productID = Integer.parseInt(req.getParameter("id"));
         ProductDao.delete(productID);
         resp.sendRedirect("http://localhost:8080/list");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/list.jsp");
+        requestDispatcher.forward(req, resp);
 
             }
 }
