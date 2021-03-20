@@ -11,7 +11,7 @@ pipeline {
      stages {
        stage('checkout') {
            steps {
-		   withCredentials([sshUserPrivateKey(credentialsId: 'git_hub', passphraseVariable: '', usernameVariable: '')]) {
+		   withCredentials([sshUserPrivateKey(credentialsId: 'git_hub', passphraseVariable: '', usernameVariable: 'roolrd')]) {
                    git branch: 'master', url: 'https://github.com/roolrd/base_of_product.git'
 }
        		   
