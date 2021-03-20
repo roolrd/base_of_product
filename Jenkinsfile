@@ -61,11 +61,8 @@ pipeline {
 	 stage('checkout-ansible') {
            
           steps {
-		  withCredentials(bindings: [sshUserPrivateKey(credentialsId: 'git_hub')]) {
-    git branch: 'main', url: 'git@github.com:roolrd/role-for-updating-web-containers.git'
-}
-             
-             
+		  credentialsId: 'git_hub', git branch: 'main', url: 'git@github.com:roolrd/role-for-updating-web-containers.git'
+                 
           }
         }
         
