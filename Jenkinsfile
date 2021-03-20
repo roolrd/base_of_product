@@ -51,9 +51,9 @@ pipeline {
         
          stage('Remove local image') {
              steps {
-               sh  'docker stop $(docker ps -q) &>/dev/null'
-               sh  'docker rmi -f $(docker image ls -q base_of_product) &>/dev/null'
-               sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product) &>/dev/null'
+               sh  'docker stop $(docker ps -q) 2>/dev/null'
+               sh  'docker rmi -f $(docker image ls -q base_of_product) 2>/dev/null'
+               sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product) 2>/dev/null'
           }
         }
         
