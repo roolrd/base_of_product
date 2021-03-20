@@ -61,7 +61,7 @@ pipeline {
 	 stage('checkout-ansible') {
            
           steps {
-		  credentialsId: 'git_hub', git branch: 'main', url: 'git@github.com:roolrd/role-for-updating-web-containers.git'
+		  git branch: 'main', credentialsId: 'git_hub', url: 'git@github.com:roolrd/role-for-updating-web-containers.git'
                  
           }
         }
