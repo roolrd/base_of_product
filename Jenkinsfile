@@ -11,7 +11,7 @@ pipeline {
      stages {
        stage('checkout') {
            steps {
-		   credentialsId: 'git_hub', git branch: 'master', url: 'git@github.com:roolrd/base_of_product.git'
+		    git branch: 'master', credentialsId: 'git_hub', url: 'git@github.com:roolrd/base_of_product.git'
 }
        		   
           }
