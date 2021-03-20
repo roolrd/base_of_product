@@ -11,7 +11,7 @@ pipeline {
      stages {
        stage('checkout') {
            steps {
-		   withCredentials([sshUserPrivateKey(credentialsId: 'git_hub', passphraseVariable: '', usernameVariable: 'roolrd')]) {
+		   withCredentials(bindings: [sshUserPrivateKey(credentialsId: 'git_hub')]) {
                    git branch: 'master', url: 'git@github.com:roolrd/base_of_product.git'
 }
        		   
@@ -67,10 +67,10 @@ pipeline {
 		*/
 		
 	 
-	 stage('SCM-checkout ansible') {
+	 stage('checkout-ansible') {
            
           steps {
-		  withCredentials([sshUserPrivateKey(credentialsId: 'git_hub')]) {
+		  withCredentials(bindings: [sshUserPrivateKey(credentialsId: 'git_hub')]) {
     git branch: 'main', url: 'git@github.com:roolrd/role-for-updating-web-containers.git'
 }
              
