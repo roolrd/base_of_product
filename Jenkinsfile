@@ -16,9 +16,7 @@ pipeline {
 }
        		   
           }
-                            
-							
-                  
+              
        stage('Execute Maven') {
            steps {
              
@@ -48,15 +46,7 @@ pipeline {
         }                  
           }
         }
-        
-         stage('Remove local image') {
-             steps {
-               sh  'docker stop $(docker ps -q) 2>/dev/null'
-               sh  'docker rmi -f $(docker image ls -q base_of_product) 2>/dev/null'
-               sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product) 2>/dev/null'
-          }
-        }
-        
+                       
      /*
 	 stage('Publish image to ECR') {
       steps {
@@ -79,7 +69,6 @@ pipeline {
           }
         }
         
-	 
         
         stage('Ansible Deploy') {
              
