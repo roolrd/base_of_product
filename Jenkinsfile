@@ -9,9 +9,9 @@ pipeline {
     }
 	
      stages {
-       stage('SCM-checkout java') {
+       stage('checkout') {
            steps {
-		   withCredentials([sshUserPrivateKey(credentialsId: 'git_hub')]) {
+		   withCredentials([sshUserPrivateKey(credentialsId: 'git_hub', passphraseVariable: '', usernameVariable: '')]) {
                    git branch: 'master', url: 'https://github.com/roolrd/base_of_product.git'
 }
        		   
