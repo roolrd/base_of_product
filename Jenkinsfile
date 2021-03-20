@@ -3,30 +3,22 @@ pipeline {
         label 'java'
         }
 	
-	  tools
+	tools
     {
        maven "maven 3.6.3"
     }
-	/*
-	environment {
-        DB_URL = credentials('DB_URL_JENKINS')
-        DB_USER = credentials('DB_USER_JENKINS')
-		DB_PASS = credentials('DB_PASS_JENKINS')
-		
-		*/
- stages {
-      stage('SCM-checkout java') {
+	
+     stages {
+       stage('SCM-checkout java') {
            steps {
 		   withCredentials([sshUserPrivateKey(credentialsId: 'git_hub')]) {
-    git branch: 'master', url: 'https://github.com/roolrd/base_of_product.git'
+                   git branch: 'master', url: 'https://github.com/roolrd/base_of_product.git'
 }
-               
-			   
+       		   
           }
-          
-                  }
+                            }
                   
-                  stage('Execute Maven') {
+       stage('Execute Maven') {
            steps {
              
                 sh 'mvn package'             
@@ -39,7 +31,7 @@ pipeline {
                sh 'docker build -t base_of_product .' 
 				
                sh 'docker tag base_of_product roolrd/base_of_product:latest'
-			   sh 'docker tag base_of_product roolrd/base_of_product:v$BUILD_NUMBER'
+	       sh 'docker tag base_of_product roolrd/base_of_product:v$BUILD_NUMBER'
 				
 				// sh  'docker tag base_of_product public.ecr.aws/o9h9g4u8/base-of-product:latest'
 				// sh  'docker tag base_of_product public.ecr.aws/o9h9g4u8/base-of-product:v$BUILD_NUMBER'
@@ -47,20 +39,20 @@ pipeline {
           }
         }
      
-  stage('Publish image to Docker Hub') {
-     steps {
-        withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-          sh  'docker push roolrd/base_of_product:latest'
-          sh  'docker push roolrd/base_of_product:v$BUILD_NUMBER' 
+         stage('Publish image to Docker Hub') {
+            steps {
+               withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
+               sh  'docker push roolrd/base_of_product:latest'
+               sh  'docker push roolrd/base_of_product:v$BUILD_NUMBER' 
         }                  
           }
         }
         
-  stage('Remove local image') {
-     steps {
-                   sh  'docker stop $(docker ps -q) 2> /dev/null'
-                   sh  'docker rmi -f $(docker image ls -q base_of_product 2> /dev/null) 2> /dev/null'
-                  sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product 2> /dev/null) 2> /dev/null'
+         stage('Remove local image') {
+             steps {
+               sh  'docker stop $(docker ps -q) 2> /dev/null'
+               sh  'docker rmi -f $(docker image ls -q base_of_product 2> /dev/null) 2> /dev/null'
+               sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product 2> /dev/null) 2> /dev/null'
           }
         }
         
