@@ -70,7 +70,7 @@ pipeline {
         stage('Ansible Deploy') {
              
             steps {
-                 sh "ansible-playbook update_containers.yml"
+                 sh "ansible-playbook update_n_clean.yml"
                   }
 
 }
