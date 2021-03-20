@@ -18,7 +18,7 @@ pipeline {
       stage('checkout') {
            steps {
              
-                git branch: 'master', url: 'https://github.com/roolrd/base_of_product.git'
+                git branch: 'master', url: 'git@github.com:roolrd/base_of_product.git'
              
           }
           
@@ -85,7 +85,7 @@ pipeline {
            
           steps {
              
-                git branch: 'main', url: 'https://github.com/roolrd/role-for-updating-web-containers.git'
+                git branch: 'main', url: 'git@github.com:roolrd/role-for-updating-web-containers.git'
              
           }
         }
