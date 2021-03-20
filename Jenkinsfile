@@ -9,13 +9,15 @@ pipeline {
     }
 	
      stages {
+	 
        stage('checkout') {
            steps {
 		    git branch: 'master', credentialsId: 'git_hub', url: 'git@github.com:roolrd/base_of_product.git'
 }
        		   
           }
-                            }
+                            
+							
                   
        stage('Execute Maven') {
            steps {
@@ -84,6 +86,8 @@ pipeline {
             steps {
                  sh "ansible-playbook update_containers.yml"
                   }
+
+}
 
 }
 }
