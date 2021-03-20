@@ -15,11 +15,13 @@ pipeline {
 		
 		*/
  stages {
-      stage('checkout') {
+      stage('SCM-checkout java') {
            steps {
-             
-                git branch: 'master', url: 'git@github.com:roolrd/base_of_product.git'
-             
+		   withCredentials([sshUserPrivateKey(credentialsId: 'git_hub')]) {
+    git branch: 'master', url: 'https://github.com/roolrd/base_of_product.git'
+}
+               
+			   
           }
           
                   }
@@ -53,15 +55,15 @@ pipeline {
         }                  
           }
         }
-        /*
+        
   stage('Remove local image') {
      steps {
                    sh  'docker stop $(docker ps -q) 2> /dev/null'
-                  // sh  'docker rmi -f $(docker image ls -q base_of_product 2> /dev/null) 2> /dev/null'
-                 // sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product 2> /dev/null) 2> /dev/null'
+                   sh  'docker rmi -f $(docker image ls -q base_of_product 2> /dev/null) 2> /dev/null'
+                  sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product 2> /dev/null) 2> /dev/null'
           }
         }
-        */
+        
      /*
 	 stage('Publish image to ECR') {
       steps {
@@ -71,21 +73,15 @@ pipeline {
           
         }
 		*/
-		/*
-      stage('Run Docker container on Jenkins Agent') {
-             
-            steps 
-			{
-							  sh "docker rm -f bop 2> /dev/null"
-			                  sh "docker run --name bop --rm -p 80:8080 --env-file ~/.env -d roolrd/base_of_product"
- 
-            }
-        }
-        */stage('checkout-2') {
+		
+	 
+	 stage('SCM-checkout ansible') {
            
           steps {
+		  withCredentials([sshUserPrivateKey(credentialsId: 'git_hub')]) {
+    git branch: 'main', url: 'https://github.com/roolrd/role-for-updating-web-containers.git'
+}
              
-                git branch: 'main', url: 'git@github.com:roolrd/role-for-updating-web-containers.git'
              
           }
         }
