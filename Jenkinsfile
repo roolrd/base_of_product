@@ -60,7 +60,7 @@ pipeline {
 	     stage('Remove local image') {
              steps {
                //sh  'docker stop $(docker ps -q) &>/dev/null'
-               sh  'docker rmi -f $(docker image ls -q)
+               sh  'docker rmi -f $(docker image ls -q)'
            }
         }
 	 
