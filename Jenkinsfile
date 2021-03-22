@@ -30,7 +30,7 @@ pipeline {
                sh 'docker build -t base_of_product .' 
 				
                sh 'docker tag base_of_product roolrd/base_of_product:latest'
-	       sh 'docker tag base_of_product roolrd/base_of_product:v$BUILD_NUMBER'
+	       sh 'docker tag base_of_product roolrd/base_of_product:beta$BUILD_NUMBER'
 				
 				// sh  'docker tag base_of_product public.ecr.aws/o9h9g4u8/base-of-product:latest'
 				// sh  'docker tag base_of_product public.ecr.aws/o9h9g4u8/base-of-product:v$BUILD_NUMBER'
