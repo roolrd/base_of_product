@@ -1,6 +1,6 @@
 package app.servlets;
 
-import app.dao.ProductDao;
+//import app.dao.ProductDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
