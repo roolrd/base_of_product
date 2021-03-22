@@ -69,7 +69,7 @@ pipeline {
            }
         }
 	 */
-	     
+	     /*
 	 stage('checkout-ansible') {
            
           steps {
@@ -86,6 +86,7 @@ pipeline {
                   }
 
 }
+*/
 
 }
 }
