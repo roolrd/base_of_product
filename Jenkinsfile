@@ -60,7 +60,8 @@ pipeline {
 	     stage('Remove local image') {
              steps {
                //sh  'docker stop $(docker ps -q) &>/dev/null'
-               sh  'docker rmi -f $(docker image ls -q)'
+              // sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product:latest)'
+	      // sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product:v$BUILD_NUMBER')'
            }
         }
 	 
