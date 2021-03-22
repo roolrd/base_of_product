@@ -12,7 +12,7 @@ pipeline {
 	 
        stage('checkout') {
            steps {
-		    git branch: 'dev', credentialsId: 'git_hub', url: 'git@github.com:roolrd/base_of_product.git'
+		    git branch: 'bugFix', credentialsId: 'git_hub', url: 'git@github.com:roolrd/base_of_product.git'
 }
        		   
           }
