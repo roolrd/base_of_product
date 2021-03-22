@@ -33,7 +33,7 @@ pipeline {
 	       sh 'docker tag base_of_product roolrd/base_of_product:fix$BUILD_NUMBER'
 				
 				// sh  'docker tag base_of_product public.ecr.aws/o9h9g4u8/base-of-product:latest'
-				// sh  'docker tag base_of_product public.ecr.aws/o9h9g4u8/base-of-product:v$BUILD_NUMBER'
+				// sh  'docker tag base_of_product public.ecr.aws/o9h9g4u8/base-of-product:fix$BUILD_NUMBER'
                
           }
         }
