@@ -57,7 +57,7 @@ pipeline {
         }
 		*/
 		
-	     /*
+	     
 	     stage('Remove local image') {
              steps {
 		     sh 'ls'
@@ -68,8 +68,8 @@ pipeline {
 	      // sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product:v$BUILD_NUMBER)'
            }
         }
-	 */
-	     /*
+	 
+	     
 	 stage('checkout-ansible') {
            
           steps {
@@ -86,7 +86,7 @@ pipeline {
                   }
 
 }
-*/
+
 
 }
 }
