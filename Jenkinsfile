@@ -28,12 +28,10 @@ pipeline {
            steps {
               
                sh 'docker build -t base_of_product .' 
-				
-               sh 'docker tag base_of_product roolrd/base_of_product:latest'
-	       sh 'docker tag base_of_product roolrd/base_of_product:beta$BUILD_NUMBER'
-				
-				// sh  'docker tag base_of_product public.ecr.aws/o9h9g4u8/base-of-product:latest'
-				// sh  'docker tag base_of_product public.ecr.aws/o9h9g4u8/base-of-product:beta$BUILD_NUMBER'
+			
+              sh 'docker tag base_of_product roolrd/base_of_product:beta$BUILD_NUMBER'
+	
+	    // sh  'docker tag base_of_product public.ecr.aws/o9h9g4u8/base-of-product:beta$BUILD_NUMBER'
                
           }
         }
@@ -41,7 +39,6 @@ pipeline {
          stage('Publish image to Docker Hub') {
             steps {
                withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-               sh  'docker push roolrd/base_of_product:latest'
                sh  'docker push roolrd/base_of_product:beta$BUILD_NUMBER' 
         }                  
           }
@@ -50,14 +47,13 @@ pipeline {
      /*
 	 stage('Publish image to ECR') {
       steps {
-         sh  'docker push public.ecr.aws/o9h9g4u8/base-of-product:latest'
-         sh  'docker push public.ecr.aws/o9h9g4u8/base-of-product:beta$BUILD_NUMBER' 
+                 sh  'docker push public.ecr.aws/o9h9g4u8/base-of-product:beta$BUILD_NUMBER' 
         }                  
           
         }
 		*/
 		
-	     
+	     /*
 	     stage('Remove local image') {
              steps {
 		     sh 'ls'
@@ -67,7 +63,8 @@ pipeline {
            }
         }
 	 
-	     
+	     */
+	     /*
 	 stage('checkout-ansible') {
            
           steps {
@@ -84,6 +81,6 @@ pipeline {
                   }
 
 }
-
+*/
 }
 }
