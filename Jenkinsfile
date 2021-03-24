@@ -22,14 +22,14 @@ pipeline {
              
                 sh 'mvn package'             
           }
-        }
-        
-	   post {
+	       post {
         always {
             emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
         }
     }  
-	     
+        }
+        
+	   	        
         stage('Docker Build and Tag') {
            steps {
               
