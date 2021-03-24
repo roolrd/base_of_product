@@ -77,7 +77,7 @@ pipeline {
         stage('Ansible Deploy') {
              
             steps {
-                 sh 'ansible-playbook update_n_clean.yml -e "SERVER=tag_Name_dev_web_server image_name_preview=roolrd/base_of_product:beta${BUILD_NUMBER-1} image_name=roolrd/base_of_product:beta$BUILD_NUMBER"'
+                 sh 'ansible-playbook update_n_clean.yml -e "SERVER=tag_Name_dev_web_server image_name=roolrd/base_of_product:beta$BUILD_NUMBER"'
                   }
 
 }
