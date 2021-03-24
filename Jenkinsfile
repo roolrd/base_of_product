@@ -81,11 +81,10 @@ pipeline {
         stage('Ansible Deploy') {
              
             steps {
-                 sh 'ansible-playbook update_n_clean.yml -e "SERVER=tag_Name_dev_web_server image_name=roolrd/base_of_product:v$BUILD_NUMBER"'
+                 sh 'ansible-playbook update_n_clean.yml -e "SERVER=tag_Name_Webserver_in_ASG image_name=roolrd/base_of_product:v$BUILD_NUMBER"'
                   }
 
 }
-
 
 }
 }
