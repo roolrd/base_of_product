@@ -22,8 +22,9 @@ pipeline {
              
                 sh 'mvn package'             
           }
+	      
         }
-        
+        	   	        
         stage('Docker Build and Tag') {
            steps {
               
@@ -57,19 +58,17 @@ pipeline {
         }
 		*/
 		
-	     /*
+	     
 	     stage('Remove local image') {
              steps {
 		     sh 'ls'
                //sh  'docker stop $(docker ps -q) &>/dev/null'
 		     
-		//     sh  'docker rmi -f $(docker image ls -q base_of_product:latest)'
-             //  sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product:latest)'
-	      // sh  'docker rmi -f $(docker image ls -q roolrd/base_of_product:v$BUILD_NUMBER)'
+		sh 'docker rmi -f $(docker image ls -q roolrd/base_of_product)'
            }
         }
-	 */
-	     /*
+	 
+	     
 	 stage('checkout-ansible') {
            
           steps {
@@ -82,11 +81,10 @@ pipeline {
         stage('Ansible Deploy') {
              
             steps {
-                 sh "ansible-playbook update_n_clean.yml"
+                 sh "ansible-playbook update_n_clean.yml -e 'SERVER=tag_Name_Webserver_in_ASG image_name=roolrd/base_of_product:v$BUILD_NUMBER' "
                   }
 
 }
-*/
 
 }
 }
